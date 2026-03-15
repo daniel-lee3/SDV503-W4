@@ -46,7 +46,7 @@ console.log(getIndexToIns([2, 20, 10], 19)); // 2
 console.log(getIndexToIns([3, 10, 5], 11)); // 3
 console.log(getIndexToIns([], 5)); // 0
 
-// if statement practice
+// if statement practice (in-class)
 
 const username = "user";
 const password = "admin";
@@ -78,3 +78,12 @@ function checkAge(){
 
 console.log("Your age is " + age); // Outputs the persons age
 checkAge();  // Runs the checkAge function
+
+// Function practice (in-class)
+//function addNumbers(a, b) {
+//    return a+b;
+//}
+
+const addNumbers = (a, b) => a + b;
+
+console.log(addNumbers(3, 6));
