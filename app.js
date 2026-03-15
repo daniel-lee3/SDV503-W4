@@ -19,7 +19,8 @@ const books = [
 ]
 
 function sortByYear(book1, book2) {
-  return (book1.releaseYear - book2.releaseYear) / Math.abs(book1.releaseYear - book2.releaseYear) || 0
+    const difference = book1.releaseYear - book2.releaseYear
+  return difference / Math.abs(difference) || 0
 }
 
 const filteredBooks = books.filter(book => book.releaseYear < 1950)
