@@ -142,3 +142,34 @@ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercu
 
 console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
 // [{"apple": 1, "bat": 2, "cookie": 2}]
+
+function isPrime(num) {
+  if (num <= 1) return false;
+  if (num === 2) return true;
+  if (num % 2 === 0) return false;
+
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function sumPrimes(number) {
+  let numbers = [];
+  for(let i = 1; i <= number; i++) {
+    if(isPrime(i)) {
+      numbers.push(i)
+    }
+  }
+
+  return numbers.reduce((a,b) => a+b, 0)
+}
+
+console.log(sumPrimes(10)) // 17
+console.log(sumPrimes(5)) // 10
+console.log(sumPrimes(2)) // 2
+console.log(sumPrimes(0)) // 0
+console.log(sumPrimes(977)) // 73156
