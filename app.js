@@ -121,3 +121,24 @@ function destroyer(arr, ...numbers) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+
+// Matching Object Filter - FreeCodeCamp
+
+function compareObjects(obj1, obj2) {
+  let truthy = true;
+  for (const key in obj2) {
+    if(obj1[key] !== obj2[key]) {
+      truthy = false;
+    }
+  }
+  return truthy;
+}
+
+function whatIsInAName(arr, source) {
+  return arr.filter(item => compareObjects(item, source));
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
+// [{"apple": 1, "bat": 2, "cookie": 2}]
