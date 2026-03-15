@@ -85,5 +85,31 @@ checkAge();  // Runs the checkAge function
 //}
 
 const addNumbers = (a, b) => a + b;
+const multiplyNumbers = (a, b) => a * b;
 
 console.log(addNumbers(3, 6));
+
+// Arrow function practice
+const welcomeMessage = (student) => `Welcome to SDV503, ${student}!`;
+
+// Declaration, Expression, ES6 Arrow function
+
+function operations(a, b) {
+    console.log(`The outcome of ${a} + ${b} is ${a+b}`);
+    console.log(`The outcome of ${a} - ${b} is ${a-b}`);
+    console.log(`The outcome of ${a} * ${b} is ${a*b}`);
+    console.log(`The outcome of ${a} / ${b} is ${a/b}`);
+}
+
+operations(10, 5)
+
+// Build a Symmetric Difference Function - FreeCodeCamp
+
+function diffArray(arr1, arr2) {
+  const result1 = arr1.filter(item => !arr2.includes(item))
+  const result2 = arr2.filter(item => !arr1.includes(item))
+  return [...result1, ...result2];
+}
+
+console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+console.log(diffArray(["pen", "book"], ["book", "pencil", "notebook"]))
