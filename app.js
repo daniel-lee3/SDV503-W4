@@ -45,3 +45,36 @@ console.log(getIndexToIns([5, 3, 20, 3], 5)); // 2
 console.log(getIndexToIns([2, 20, 10], 19)); // 2
 console.log(getIndexToIns([3, 10, 5], 11)); // 3
 console.log(getIndexToIns([], 5)); // 0
+
+// if statement practice
+
+const username = "user";
+const password = "admin";
+
+const nameInput = "user";
+const passwordInput = "admin123";
+
+// Check if credentials match
+if (username === nameInput && password === passwordInput) {
+    console.log("Logged in successfully");
+} else {
+    console.log("Incorrect credentials");
+}
+
+// Commenting practice (Code is by Logan, Prikshit and siddh)
+
+let age = 15; // Declaring a variable named age
+
+// Declare a function that will check the age and give an output
+function checkAge(){
+    if(age >= 18){ // If age is higher or equal to 18
+        console.log("You can buy alcohol and cigarettes.");
+    } else if(age >= 16){ // If age is higher or equal to 16
+        console.log("You can buy vapes, but not cigarettes or alcohol.");
+    } else{ // If age is lower than 16
+        console.log("You cannot buy alcohol or cigarettes. :(");
+    }
+};
+
+console.log("Your age is " + age); // Outputs the persons age
+checkAge();  // Runs the checkAge function
