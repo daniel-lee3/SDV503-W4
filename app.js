@@ -173,3 +173,28 @@ console.log(sumPrimes(5)) // 10
 console.log(sumPrimes(2)) // 2
 console.log(sumPrimes(0)) // 0
 console.log(sumPrimes(977)) // 73156
+
+// Add numbers function (playground)
+function SumAll(...numbers) {
+    return numbers.reduce((prev, curr) => prev + curr)
+}
+
+console.log(SumAll(10,4,7,3))
+
+// Create a Deep Flattening Tool - FreeCodeCamp
+function steamrollArray(arr) {
+  const result = [];
+  
+  for(const value of arr) {
+    if(Array.isArray(value)) {
+      result.push(...steamrollArray(value))
+    } else {
+      result.push(value)
+    }
+  }
+
+  return result;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]))
+console.log(steamrollArray([1, {}, [3, [[4]]]]))
