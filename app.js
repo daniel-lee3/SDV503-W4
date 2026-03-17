@@ -16,25 +16,25 @@ const books = [
         authorName: "f",
         releaseYear: 1948
     }
-]
+];
 
 function sortByYear(book1, book2) {
-    const difference = book1.releaseYear - book2.releaseYear
-    return difference / Math.abs(difference) || 0
+    const difference = book1.releaseYear - book2.releaseYear;
+    return difference / Math.abs(difference) || 0;
 }
 
-const filteredBooks = books.filter(book => book.releaseYear < 1950)
+const filteredBooks = books.filter(book => book.releaseYear < 1950);
 filteredBooks.sort(sortByYear);
 
 // Implement a Sorted Index Finder
 
 function getIndexToIns(arr, num) {
-    arr.sort((acc, cur) => acc-cur)
-    let index = arr.findIndex(x => x >= num)
+    arr.sort((acc, cur) => acc-cur);
+    let index = arr.findIndex(x => x >= num);
     if (index === -1) {
-        index = arr.length
+        index = arr.length;
     }
-    return index
+    return index;
 }
 
 console.log(getIndexToIns([10, 20, 30, 40, 50], 35)); // 3
@@ -101,18 +101,18 @@ function operations(a, b) {
     console.log(`The outcome of ${a} / ${b} is ${a/b}`);
 }
 
-operations(10, 5)
+operations(10, 5);
 
 // Build a Symmetric Difference Function - FreeCodeCamp
 
 function diffArray(arr1, arr2) {
-  const result1 = arr1.filter(item => !arr2.includes(item))
-  const result2 = arr2.filter(item => !arr1.includes(item))
+  const result1 = arr1.filter(item => !arr2.includes(item));
+  const result2 = arr2.filter(item => !arr1.includes(item));
   return [...result1, ...result2];
 }
 
 console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
-console.log(diffArray(["pen", "book"], ["book", "pencil", "notebook"]))
+console.log(diffArray(["pen", "book"], ["book", "pencil", "notebook"]));
 
 // Value Remover Function - FreeCodeCamp
 
@@ -120,7 +120,7 @@ function destroyer(arr, ...numbers) {
   return arr.filter(item => !numbers.includes(item));
 }
 
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
 // Matching Object Filter - FreeCodeCamp
 
@@ -161,25 +161,25 @@ function sumPrimes(number) {
   let numbers = [];
   for(let i = 1; i <= number; i++) {
     if(isPrime(i)) {
-      numbers.push(i)
+      numbers.push(i);
     }
   }
 
-  return numbers.reduce((a,b) => a+b, 0)
+  return numbers.reduce((a,b) => a+b, 0);
 }
 
-console.log(sumPrimes(10)) // 17
-console.log(sumPrimes(5)) // 10
-console.log(sumPrimes(2)) // 2
-console.log(sumPrimes(0)) // 0
-console.log(sumPrimes(977)) // 73156
+console.log(sumPrimes(10)); // 17
+console.log(sumPrimes(5)); // 10
+console.log(sumPrimes(2)); // 2
+console.log(sumPrimes(0)); // 0
+console.log(sumPrimes(977)); // 73156
 
 // Add numbers function (playground)
 function SumAll(...numbers) {
-    return numbers.reduce((prev, curr) => prev + curr)
+    return numbers.reduce((prev, curr) => prev + curr);
 }
 
-console.log(SumAll(10,4,7,3))
+console.log(SumAll(10,4,7,3));
 
 // Create a Deep Flattening Tool - FreeCodeCamp
 function steamrollArray(arr) {
@@ -187,14 +187,29 @@ function steamrollArray(arr) {
   
   for(const value of arr) {
     if(Array.isArray(value)) {
-      result.push(...steamrollArray(value))
+      result.push(...steamrollArray(value));
     } else {
-      result.push(value)
+      result.push(value);
     }
   }
 
   return result;
 }
 
-console.log(steamrollArray([1, [2], [3, [[4]]]]))
-console.log(steamrollArray([1, {}, [3, [[4]]]]))
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+console.log(steamrollArray([1, {}, [3, [[4]]]]));
+
+const numbers = [1, 1, 1, 1, 1];
+let sum = 0;
+const forEachRes = numbers.forEach(num => {
+  return (sum += num);
+});
+const mapRes = numbers.map(num => {
+  return (sum += num);
+});
+
+const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
+const filteredArray = originalArray.filter(item => item.id > 1);
+filteredArray[0].id = 4;
+
+console.log(originalArray)
